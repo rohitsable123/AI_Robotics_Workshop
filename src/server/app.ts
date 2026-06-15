@@ -3,7 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import path from 'path';
 import fs from 'fs';
-import enquiryRouter from './routes/enquiry';
+import enquiryRouter from './routes/enquiry.js';
 
 // Load environment variables
 dotenv.config();

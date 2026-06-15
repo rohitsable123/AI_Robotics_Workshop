@@ -1,6 +1,6 @@
 import { Router, Request, Response } from 'express';
 import mongoose from 'mongoose';
-import { Enquiry } from '../models/Enquiry';
+import { Enquiry } from '../models/Enquiry.js';
 
 const router = Router();
 
