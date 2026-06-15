@@ -1,4 +1,4 @@
-import mongoose, { Schema, Document } from 'mongoose';
+import mongoose, { Schema, Document, Model } from 'mongoose';
 
 export interface IEnquiry extends Document {
   name: string;
@@ -31,4 +31,4 @@ const EnquirySchema = new Schema<IEnquiry>({
 });
 
 // Avoid compiling model multiple times during hot-reload
-export const Enquiry = mongoose.models.Enquiry || mongoose.model<IEnquiry>('Enquiry', EnquirySchema);
+export const Enquiry: Model<IEnquiry> = (mongoose.models.Enquiry as Model<IEnquiry>) || mongoose.model<IEnquiry>('Enquiry', EnquirySchema);
