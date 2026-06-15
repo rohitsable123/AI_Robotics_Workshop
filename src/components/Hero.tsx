@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Sparkles, Bot, Rocket } from 'lucide-react';
+import { ArrowRight, Sparkles, Bot, Rocket, Code, Award } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   const handleScrollToForm = () => {
@@ -10,7 +10,10 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-brand-purple-50 via-white to-brand-purple-50/20 py-16 sm:py-24 lg:py-32">
+    <section className="relative overflow-hidden bg-gradient-to-b from-white via-brand-purple-50/40 to-brand-purple-50/20 pt-8 pb-16 sm:pt-12 sm:pb-24 lg:pt-14 lg:pb-32">
+      {/* Background Dot Grid for Tech Feel */}
+      <div className="absolute inset-0 bg-[radial-gradient(#e0e7ff_1.5px,transparent_1.5px)] [background-size:24px_24px] opacity-60 pointer-events-none" />
+
       {/* Background blobs for playful design */}
       <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-brand-purple-100/40 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute -top-20 -right-20 w-[300px] h-[300px] bg-brand-orange-100/40 rounded-full blur-2xl pointer-events-none" />
@@ -28,7 +31,7 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* Title */}
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-purple-900 leading-tight tracking-tight mb-6">
+            <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-extrabold text-brand-purple-900 leading-tight tracking-tight mb-6">
               AI & Robotics <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-purple-600 via-brand-pink-500 to-brand-orange-500">
                 Summer Workshop
@@ -44,7 +47,7 @@ export const Hero: React.FC = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
               <button
                 onClick={handleScrollToForm}
-                className="group w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-brand-orange-500 hover:bg-brand-orange-600 text-white font-display text-lg font-semibold rounded-2xl border-b-4 border-brand-orange-700 hover:translate-y-[-2px] active:translate-y-[2px] transition-all"
+                className="group w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-brand-orange-500 to-brand-pink-500 hover:from-brand-orange-600 hover:to-brand-pink-600 text-white font-display text-lg font-bold rounded-2xl border-b-4 border-brand-orange-700 hover:translate-y-[-2px] active:translate-y-[1px] hover:shadow-lg hover:shadow-brand-orange-500/20 active:shadow-none transition-all cursor-pointer"
               >
                 Enroll Now
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -54,7 +57,7 @@ export const Hero: React.FC = () => {
                   const element = document.getElementById('details');
                   if (element) element.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-brand-purple-50 text-brand-purple-900 font-display text-lg font-semibold rounded-2xl border-2 border-brand-purple-100 hover:border-brand-purple-200 transition-colors"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-brand-purple-50 text-brand-purple-900 font-display text-lg font-bold rounded-2xl border-2 border-brand-purple-100 hover:border-brand-purple-200 transition-colors"
               >
                 Learn More
               </button>
@@ -78,7 +81,10 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Right Graphics Column */}
-          <div className="lg:col-span-5 flex justify-center relative">
+          <div className="lg:col-span-5 flex justify-center relative py-8">
+            {/* Spinning Orbit Ring behind Robot */}
+            <div className="absolute inset-0 max-w-[340px] sm:max-w-[380px] lg:max-w-[420px] aspect-square rounded-full border-2 border-dashed border-brand-purple-300/40 animate-spin mx-auto self-center pointer-events-none" style={{ animationDuration: '30s' }} />
+
             {/* Playful Floating Robot Graphic */}
             <div className="relative w-72 sm:w-80 lg:w-96 aspect-square bg-gradient-to-tr from-brand-purple-100 to-brand-pink-50 rounded-full flex items-center justify-center p-8 shadow-inner animate-float-slow">
               
@@ -113,19 +119,37 @@ export const Hero: React.FC = () => {
                 <path d="M 92 58 Q 100 64 108 58" fill="none" stroke="#2DD4BF" strokeWidth="2" strokeLinecap="round" />
               </svg>
 
-              {/* Float badges around the robot */}
-              <div className="absolute top-8 -left-4 bg-white p-3 rounded-2xl shadow-xl flex items-center space-x-2 border border-brand-purple-50 animate-float-fast">
+              {/* Floating badges around the robot */}
+              {/* Badge 1: AI (Top-Left) */}
+              <div className="absolute top-4 -left-6 bg-white p-3 rounded-2xl shadow-xl flex items-center space-x-2 border border-brand-purple-50 animate-float-fast">
                 <div className="p-1.5 bg-brand-teal-500 rounded-lg text-white">
                   <Bot className="w-5 h-5" />
                 </div>
-                <span className="font-display font-bold text-sm text-brand-purple-900">AI Powered</span>
+                <span className="font-display font-bold text-sm text-brand-purple-900">AI Logic</span>
               </div>
 
-              <div className="absolute bottom-8 -right-4 bg-white p-3 rounded-2xl shadow-xl flex items-center space-x-2 border border-brand-purple-50 animate-float-slow" style={{ animationDelay: '1s' }}>
+              {/* Badge 2: Python (Top-Right) */}
+              <div className="absolute -top-6 -right-4 bg-white p-3 rounded-2xl shadow-xl flex items-center space-x-2 border border-brand-purple-50 animate-float-slow" style={{ animationDelay: '0.5s' }}>
+                <div className="p-1.5 bg-brand-yellow-500 rounded-lg text-white">
+                  <Code className="w-5 h-5" />
+                </div>
+                <span className="font-display font-bold text-sm text-brand-purple-900">Python</span>
+              </div>
+
+              {/* Badge 3: Certificates (Bottom-Left) */}
+              <div className="absolute -bottom-6 -left-4 bg-white p-3 rounded-2xl shadow-xl flex items-center space-x-2 border border-brand-purple-50 animate-float-fast" style={{ animationDelay: '1.5s' }}>
+                <div className="p-1.5 bg-brand-purple-500 rounded-lg text-white">
+                  <Award className="w-5 h-5" />
+                </div>
+                <span className="font-display font-bold text-sm text-brand-purple-900">Certificates</span>
+              </div>
+
+              {/* Badge 4: Fun Quizzes (Bottom-Right) */}
+              <div className="absolute bottom-4 -right-6 bg-white p-3 rounded-2xl shadow-xl flex items-center space-x-2 border border-brand-purple-50 animate-float-slow" style={{ animationDelay: '1s' }}>
                 <div className="p-1.5 bg-brand-orange-500 rounded-lg text-white">
                   <Rocket className="w-5 h-5" />
                 </div>
-                <span className="font-display font-bold text-sm text-brand-purple-900">Fun Quizzes</span>
+                <span className="font-display font-bold text-sm text-brand-purple-900">Simulators</span>
               </div>
             </div>
           </div>

@@ -28,22 +28,22 @@ export const Header: React.FC = () => {
           </div>
 
           {/* Navigation Links */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-12">
             <button
               onClick={() => scrollToSection('details')}
-              className="text-sm font-semibold text-brand-purple-900/70 hover:text-brand-purple-500 transition-colors"
+              className="text-base font-bold text-brand-purple-900/80 hover:text-brand-purple-600 transition-colors"
             >
               Workshop Details
             </button>
             <button
               onClick={() => scrollToSection('outcomes')}
-              className="text-sm font-semibold text-brand-purple-900/70 hover:text-brand-purple-500 transition-colors"
+              className="text-base font-bold text-brand-purple-900/80 hover:text-brand-purple-600 transition-colors"
             >
               What You'll Learn
             </button>
             <button
               onClick={() => scrollToSection('faqs')}
-              className="text-sm font-semibold text-brand-purple-900/70 hover:text-brand-purple-500 transition-colors"
+              className="text-base font-bold text-brand-purple-900/80 hover:text-brand-purple-600 transition-colors"
             >
               FAQs
             </button>
